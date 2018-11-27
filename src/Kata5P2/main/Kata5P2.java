@@ -5,6 +5,7 @@ import Kata5P2.model.Mail;
 import Kata5P2.view.HistogramDisplay;
 import Kata5P2.view.MailHistogramBuilder;
 import Kata5P2.view.MailListReader;
+import Kata5P2.view.MailListReaderBD;
 
 import java.io.IOException;
 import java.util.List;
@@ -27,12 +28,8 @@ public class Kata5P2 {
     }
 
     public void input() {
-        MailListReader mailListReader = new MailListReader();
-        try {
-            mailList = mailListReader.read(fileName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        MailListReaderBD mailListReaderBD = new MailListReaderBD();
+        mailList = mailListReaderBD.read();
     }
 
     public void process() {
